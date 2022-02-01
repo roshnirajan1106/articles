@@ -1,9 +1,10 @@
 
 import './App.css';
-import{BrowserRouter, Route, Switch ,Link,NavLink} from 'react-router-dom'
+import{BrowserRouter, Redirect,Route, Switch ,Link,NavLink} from 'react-router-dom'
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Article from './components/Article';
 function App() {
   return (
     <BrowserRouter>
@@ -23,6 +24,12 @@ function App() {
       </Route>
       <Route path="/contact">
         <Contact />
+      </Route>
+      <Route path="/articles/:id">
+        <Article  />
+      </Route>
+      <Route path="*">
+        <Redirect to="/" />
       </Route>
       </Switch>
       
